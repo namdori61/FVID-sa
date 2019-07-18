@@ -4,7 +4,6 @@ etc/
 include/
 lib/
 share/
-.Python
 
 #config
 config.ini
@@ -18,3 +17,6 @@ chromedriver
 
 #etc
 sample.py
+__pycache__
+.idea/
+.Python
