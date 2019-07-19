@@ -27,7 +27,21 @@ class Crawler():
         return json.dumps(params)
 
     def get_method(self, base_url, uri, params, headers):
-        return requests.get(base_url + uri, params=params, headers=headers)
+        response = requests.get(base_url + uri, params=params, headers=headers)
+        try:
+            response.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+            return "Error: " + str(e)
+
+        json_obj = response.json()
+        return json_obj
 
     def post_method(self, base_url, params, headers):
-        return requests.post(base_url, data=params, headers=headers)
+        response = requests.post(base_url, data=params, headers=headers)
+        try:
+            response.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+            return "Error: " + str(e)
+            
+        json_obj = response.json()
+        return json_obj
