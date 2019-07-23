@@ -4,6 +4,9 @@ etc/
 include/
 lib/
 share/
+lib64
+pyvenv.cfg
+data_crawler.pyc
 
 #config
 config.ini
