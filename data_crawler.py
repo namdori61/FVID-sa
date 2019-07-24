@@ -1,18 +1,20 @@
 from airflow import models
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime, timedelta
+import pendulum
 	    
-	
+local_tz = pendulum.timezone("Asia/Seoul")
+
 default_args = {
     'owner': 'sangho',
     'depends_on_past': False,
-    'start_date': datetime(2019, 7, 1),
+    'start_date': datetime(2019, 7, 24, tzinfo=local_tz),
     'email': ['namdori61@gmail.com'],
     'email_on_failure': False,
     'email_on_retry': False,
     'retries': 1,
     'retry_delay': timedelta(minutes=5)	}
-	
+
 with models.DAG(
     dag_id='crawler', description='crawling keyword trend data from search engine', 
     schedule_interval = '00  14  *  *  *', 
@@ -21,7 +23,7 @@ with models.DAG(
 	
     t1 = BashOperator(
         task_id='keyword_trend_data_crawler',
-        bash_command='python3 ../controller.py',
+        bash_command='python3 controller.py',
         dag=dag)
 
     t2 = BashOperator(

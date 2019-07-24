@@ -37,7 +37,7 @@ class Controller():
             self.db_db = config['LOCAL']['DB_DB']
             self.db_user = config['LOCAL']['DB_USER']
             self.db_pw = config['LOCAL']['DB_PW']
-            self.db_keyword_set_table = config['SERVER']['DB_KEYWORD_SET_TABLE']
+            self.db_keyword_set_table = config['LOCAL']['DB_KEYWORD_SET_TABLE']
             self.db_trend_table = config['LOCAL']['DB_TREND_TABLE']
         
         self.crawler = Crawler()
