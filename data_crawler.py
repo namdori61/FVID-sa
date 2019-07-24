@@ -23,7 +23,7 @@ with models.DAG(
 	
     t1 = BashOperator(
         task_id='keyword_trend_data_crawler',
-        bash_command='python3 controller.py',
+        bash_command='cd /home/sangho/FVID-sa && python3 ./controller.py',
         dag=dag)
 
     t2 = BashOperator(
