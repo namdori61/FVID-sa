@@ -7,9 +7,11 @@ share/
 lib64
 pyvenv.cfg
 data_crawler.pyc
+dump.rdb
 
 #config
 config.ini
+supervisord.conf
 chromedriver
 
 #jupyter
