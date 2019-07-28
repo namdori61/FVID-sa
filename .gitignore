@@ -12,6 +12,7 @@ dump.rdb
 #config
 config.ini
 supervisord.conf
+celerybeat-schedule
 chromedriver
 
 #jupyter
@@ -22,6 +23,7 @@ chromedriver
 
 #etc
 sample.py
+nf_ex.txt
 __pycache__
 .idea/
 .Python

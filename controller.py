@@ -59,7 +59,7 @@ app.conf.update(
     CELERYBEAT_SCHEDULE = {
         'get_keyword_data-every-day': {
             'task': 'controller.get_keyword_data',
-            'schedule': crontab(hour=15),
+            'schedule': crontab(minute=0, hour=15),
             'args': ()
         },
     }
